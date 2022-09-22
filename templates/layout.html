@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet"/> -->
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+    <style>
+      #footer {
+            position: fixed;
+            padding: 10px 10px 0px 10px;
+            bottom: 0;
+            /* Height of the footer*/ 
+            height: 40px;
+        }
+        .jumbotron{
+          background-color: white;
+        }
+
+        hr{
+          height: 3px;
+          background: black;
+        }
+
+        .box{
+          margin:3% 0%;
+        }
+
+        .flex2 {
+          display: flex; 
+          justify-content: space-around; 
+          background-color: green; 
+        }
+        
+        /* #address_form{
+          display: none;
+        } */
+    </style>
+    <title>NFT T-shirts</title>
+  </head>
+  <body>
+    <div class="jumbotron container">
+        <div class="header">
+
+          <h1><img src="https://img.seadn.io/files/84a8e730390569110fd2095dcffd6963.png?fit=max&w=600" alt="whatsapp img" width="80" height="80" style="display: inline; border-radius: 50%;"> NFT T-shirts !</h1>
+          
+        </div>
+    </div>
+
+      <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+      
+    <div id="footer">
+      <small>&copy; 2022, Devansh Singh</small>
+    </div>
+  </body>
+</html>

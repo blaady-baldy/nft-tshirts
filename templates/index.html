@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div>
+<form action="/" method="POST">
+
+    <div class="row">
+      <label for="nft">Choose an NFT:</label>
+      <select class="form-control" id="nft" name="nft" style="width:50%;">
+        <option value="{{nft}}">{{nft}}</option>
+        <option value="Goblintown">Goblintown</option>
+        <option value="Mutant Ape">Mutant Ape</option>
+        <option value="Bored Ape">Bored Ape</option>
+      </select>
+    </div>
+
+    <div class="row">
+
+    <div class="col-lg-3 box">
+
+    <h2>Token ID</h2>
+      <hr>
+    <label for="token_ID">Enter token id of the Goblin NFT: </label>
+    <input type="number" class="form-control" name="token_ID" id="token_ID" value="{{token_ID}}" required>
+    </div>
+
+    <div class="col-lg-3 box">
+    <h2>Colour</h2>
+      <hr>
+    <label for="color">Choose a colour for the T-shirt:</label>
+    <select class="form-control" id="color" name="color">
+      <option value="{{color}}">{{color}}</option>
+      <option value="white">White</option>
+      <option value="black">Black</option>
+      <option value="berry">Berry</option>
+      <option value="black heather">Black Heather</option>
+      <option value="grey">Grey</option>
+      <option value="gold">Gold</option>
+      <option value="orange">Orange</option>
+      <option value="red">Red</option>
+      <option value="navy">Navy</option>
+      <option value="teal">Teal</option>
+      <option value="royal">Royal</option>
+      <option value="green">Green</option>
+      <option value="citron">Citron</option>
+    </select>
+
+  </div>
+
+  <div class="col-lg-3 box">
+  <h2>Size</h2>
+    <hr>
+
+  <label for="size">Choose a size for the T-shirt:</label>
+    <select class="form-control" id="size" name="size">
+      <option value="{{size}}">{{size}} </option>
+      <option value="S">Small(S)</option>
+      <option value="M">Medium(M)</option>
+      <option value="L">Large(L)</option>
+      <option value="XL">Extra Large(XL)</option>
+    </select>
+
+  </div>
+
+  <div class="col-lg-3 box">
+  <h2>Placement</h2>
+    <hr>
+  <label for="placement">Choose a placement for the design:</label>
+    <select class="form-control" id="placement" name="placement">
+      <option value="{{placement}}">{{placement}}</option>
+      <option value="front">Front</option>
+      <option value="back">Back</option>
+      <option value="embroidery_chest_center">Embroidery Chest Center</option>
+      <option value="embroidery_chest_left">Embroidery Chest Left</option>
+      <option value="sleeve_left">Sleeve Left</option>
+      <option value="sleeve_right">Sleeve Right</option>
+    </select>
+
+</div>
+</div>
+
+<br>
+
+  <div class="row">
+    <div class="col-lg-4 box">
+      <input type="submit" class="btn btn-primary btn-lg" name="submit_button" value="Get Mockup">
+    </div>
+
+    <!-- <div class="col-lg-4 box">
+      <button class="btn btn-primary btn-lg" onclick="show()" id="show_form_btn">Place Order
+    </div> -->
+    
+  </div>
+  
+  <div class="row">
+
+    <div id="address_form" class="col-lg-4">
+      <label for="name">Enter name of the recipient: </label>
+      <input type="text" class="form-control" name="name" id="name">
+      <hr>
+      <h3>Address</h3>
+      <label for="address1">House No / Block No /Appartment No :</label>
+      <input type="text" class="form-control" name="address1" id="address1">
+      <label for="city">City : </label>
+      <input type="text" class="form-control" name="city" id="city">
+      <label for="state">State : </label>
+      <input type="text" class="form-control" name="state" id="state">
+      <!-- <label for="country_code">Country Code : </label> -->
+      <!-- <input type="text" class="form-control" name="country_code" id="country_code">  -->
+      <label for="country_name">Country Name : </label>
+      <input type="text" class="form-control" name="country_name" id="country_name">
+      <label for="zip">Zip : </label>
+      <input type="text" class="form-control" name="zip" id="zip">
+    </div>
+
+    <div class="col-lg-4">
+      {% if choice != "none" %}
+      <img src="{{mockup_image}}" alt="mockup img" width="400" height="400">
+      {% endif %}
+    </div>
+
+    <div class="col-lg-4">
+      {% if choice == "Place Order" %}
+      <h2>Order Placed !!</h2>
+      <h2>Order ID - {{order_ID}}</h2>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <div class="row box">
+    <input type="submit" class="btn btn-lg btn-success" name="submit_button" value="Place Order">
+  </div>
+</div>
+
+
+</form>
+
+{% endblock %}
